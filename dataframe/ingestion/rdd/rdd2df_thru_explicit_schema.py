@@ -27,8 +27,8 @@ if __name__ == '__main__':
 
     # Setup spark to use s3
     hadoop_conf = spark.sparkContext._jsc.hadoopConfiguration()
-    hadoop_conf.set("fs.s3a.access.key", app_secret["s3_conf"]["access_key"])
-    hadoop_conf.set("fs.s3a.secret.key", app_secret["s3_conf"]["secret_access_key"])
+    hadoop_conf.set("fs.s3a.access.key", app_secret["s3_conf"][0])
+    hadoop_conf.set("fs.s3a.secret.key", app_secret["s3_conf"][1])
 
     print("\nConvert RDD to Dataframe using SparkSession.createDataframe(),")
     # Creating RDD of Row
